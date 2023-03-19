@@ -185,12 +185,6 @@ public class Player : MonoBehaviour, IDamageable
 
     void ApplyVelocity()
     {
-        /*Vector3 pos = m_rigidBody.transform.position;
-        pos.x += m_vel.x;
-        pos.y += m_vel.y;
-        m_rigidBody.transform.position = pos;
-        */
-
         Vector3 pos = transform.position;
         pos.x += m_vel.x;
         pos.y += m_vel.y;
