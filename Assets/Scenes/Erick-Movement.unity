@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 356724169}
   - component: {fileID: 356724168}
   - component: {fileID: 356724171}
+  - component: {fileID: 356724172}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -156,12 +157,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialMoveSpeed: 10
   moveSpeed: 10
-  maxVelocity: 5
+  maxVelocity: 10
   slowdownFactor: 0.5
   willPower: 100
-  dashPowerMultiplier: 0.3
-  dashTime: 0.1
-  isDashing: 0
 --- !u!212 &356724169
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -250,6 +248,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &356724172
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356724167}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 520eebf3caf946b4a8eae09859a720e5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2103012140
 GameObject:
   m_ObjectHideFlags: 0

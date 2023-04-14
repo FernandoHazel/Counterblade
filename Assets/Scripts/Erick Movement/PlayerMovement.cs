@@ -11,27 +11,30 @@ public class PlayerMovement : MonoBehaviour
     [Range(0f, 100f)]
     [SerializeField] private float willPower;
 
-    [Header("Dash Variables")]
-    [SerializeField] private float dashPowerMultiplier = 0.3f;
-    [SerializeField] private float dashTime=0.1f;
-
+    [Header("Parry Variables")]
+    private bool isParryng;
 
     private Rigidbody2D rb;
+    private Animator anim;
     private Vector2 currentVelocity;
-    [SerializeField]private bool isDashing = false;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+    }
 
     void Start()
     {
-        
-        rb = GetComponent<Rigidbody2D>();
+
+        isParryng = false;
         moveSpeed = initialMoveSpeed;
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isDashing)
+       if (Input.GetButtonDown("Fire1") && !isParryng)
         {
-            print("Dash Button");
-            Dash();
+            ParryAction();
+            anim.SetTrigger("Parry");
         }
     }
     private void FixedUpdate()
@@ -54,18 +57,19 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = initialMoveSpeed;
         }
 
-        if (!isDashing && movement.magnitude > 0)
+        if ( movement.magnitude > 0)
         {
             rb.AddForce(movement.normalized * moveSpeed);
             currentVelocity = rb.velocity;
         }
-        else if (!isDashing)
+        else
         {
             rb.velocity = currentVelocity * (1 - slowdownFactor);
             currentVelocity = rb.velocity;
         }
 
-        if (rb.velocity.magnitude > maxVelocity && !isDashing)
+
+        if (rb.velocity.magnitude > maxVelocity)
         {
             rb.velocity = rb.velocity.normalized * maxVelocity;
         }
@@ -74,18 +78,15 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = new Vector3(scale, 1f, 1f);
     }
 
-    private void Dash()
+   private void ParryAction()
     {
-        print("Dashing");
-        isDashing = true;
-        currentVelocity = rb.velocity;
-        rb.velocity = currentVelocity.normalized * (moveSpeed * dashPowerMultiplier);
-        Invoke("ResetDash", dashTime);
-    }
-
-    private void ResetDash()
-    {
-        isDashing = false;
         
+        isParryng = true;
+        anim.SetTrigger("Parry");
+    }
+    public void ParryFinish()
+    {
+        anim.SetTrigger("De-Parry");
+        isParryng = false;
     }
 }
