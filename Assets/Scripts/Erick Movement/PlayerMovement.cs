@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void ParryFinish()
     {
-        anim.SetTrigger("De-Parry");
+        
         isParryng = false;
     }
 }
