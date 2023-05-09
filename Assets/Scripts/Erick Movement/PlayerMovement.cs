@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Parry Variables")]
     private bool isParryng;
+    [SerializeField] private float parryRange = 2f;
+    [SerializeField] private float parryForce = 2f;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -22,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
+
+    [Header("Effects")]
+    [SerializeField] ParticleSystem Parryeffect;
 
     void Start()
     {
@@ -33,8 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
        if (Input.GetButtonDown("Fire1") && !isParryng)
         {
-            ParryAction();
-            anim.SetTrigger("Parry");
+            ParryAction();         
         }
     }
     private void FixedUpdate()
@@ -88,5 +92,29 @@ public class PlayerMovement : MonoBehaviour
     {
         
         isParryng = false;
+    }
+    public void ParryEffect()
+    {
+
+        Parryeffect.Play();
+        // Get all colliders within a specified range
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, parryRange);
+
+        // Apply a force to each rigidbody2D component attached to the colliders
+        foreach (Collider2D collider in colliders)
+        {
+            Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                Vector2 direction = (rb.transform.position - transform.position).normalized;
+                rb.AddForce(direction * parryForce, ForceMode2D.Impulse);
+            }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, parryRange);
     }
 }
