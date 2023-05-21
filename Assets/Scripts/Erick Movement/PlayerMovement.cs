@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [Range(0f, 100f)]
     [SerializeField] private float willPower;
 
+    public static Transform playerTransform;
+
     [Header("Parry Variables")]
     private bool isParryng;
     [SerializeField] private float parryRange = 2f;
@@ -32,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
     {
 
         isParryng = false;
-        moveSpeed = initialMoveSpeed;
     }
     private void Update()
     {
@@ -80,6 +81,9 @@ public class PlayerMovement : MonoBehaviour
 
         float scale = Mathf.Lerp(1f, 0.80f, rb.velocity.magnitude / maxVelocity);
         transform.localScale = new Vector3(scale, 1f, 1f);
+
+        //Actualizamos la variable estática con la posición del jugador
+        playerTransform = transform;
     }
 
    private void ParryAction()
