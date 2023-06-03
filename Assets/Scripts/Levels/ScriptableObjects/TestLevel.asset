@@ -21,3 +21,9 @@ MonoBehaviour:
       secondsToSurvive: 0
       playerGainsTimeOnKill: 0
       timeGainedPerKillMultiplier: 0
+    hasToCompleteTask: 0
+    tasksConfig:
+      asda: 0
+    hasToBeatBoss: 0
+    BossConfig:
+      asda: 0
