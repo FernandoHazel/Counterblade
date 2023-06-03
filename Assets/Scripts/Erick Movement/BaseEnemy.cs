@@ -8,7 +8,6 @@ public class BaseEnemy : MonoBehaviour
     [SerializeField] private float maxVelocity = 10f;
     [Range(0f, 1f)]
     [SerializeField] private float slowdownFactor = 0.5f;
-
     private Rigidbody2D rb;
     private Vector2 currentVelocity;
     private void Awake()
@@ -39,7 +38,6 @@ public class BaseEnemy : MonoBehaviour
             rb.velocity = currentVelocity * (1 - slowdownFactor);
             currentVelocity = rb.velocity;
         }
-
 
         if (rb.velocity.magnitude > maxVelocity)
         {
