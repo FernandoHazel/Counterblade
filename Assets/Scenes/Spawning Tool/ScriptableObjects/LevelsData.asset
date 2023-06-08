@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61e425cc78fc7744b5ac17ff7a1cc73, type: 3}
+  m_Name: LevelsData
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 5815418561983032016, guid: 0019edae10060d14a950ab3bc914b878, type: 3}
+  - {fileID: 5815418561983032016, guid: d0def36e66e41a341b3a857c6dcbf501, type: 3}
+  - {fileID: 5815418561983032016, guid: 5b1d0402f32d02f4b8008c9336f30063, type: 3}
+  - {fileID: 5815418561983032016, guid: fe73ce4f211071f4f911864d04e979fd, type: 3}
+  - {fileID: 5815418561983032016, guid: a3041972ead444c4684da27d1dba8230, type: 3}
+  levels:
+  - time: 2
+    waves:
+    - EnemySpawnTypes:
+      - EnemyType: 0
+        quantity: 3
+        spawnTime: 0
+        generator: 0
+        tier: 0
+        spawnInterval: 2
+      - EnemyType: 1
+        quantity: 1
+        spawnTime: 3
+        generator: 1
+        tier: 0
+        spawnInterval: 0.5
+    - EnemySpawnTypes:
+      - EnemyType: 4
+        quantity: 1
+        spawnTime: 0
+        generator: 0
+        tier: 0
+        spawnInterval: 0.5
+      - EnemyType: 3
+        quantity: 3
+        spawnTime: 0
+        generator: 1
+        tier: 0
+        spawnInterval: 0.5
+      - EnemyType: 2
+        quantity: 1
+        spawnTime: 5
+        generator: 2
+        tier: 0
+        spawnInterval: 0.5

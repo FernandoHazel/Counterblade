@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class BaseEnemy : MonoBehaviour
 {
+    public Enemy_SO enemyData;
     [Header("Movement Variables")]
     [SerializeField] private float moveSpeed = 100;
     [SerializeField] private float maxVelocity = 10f;
@@ -13,6 +14,13 @@ public class BaseEnemy : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    
+    private void OnEnable() 
+    {
+        //Cuando este enemigo aparece agrega uno al contador
+        GameManager.enemyCount++;
     }
     private void FixedUpdate()
     {
@@ -46,5 +54,12 @@ public class BaseEnemy : MonoBehaviour
 
         float scale = Mathf.Lerp(1f, 0.80f, rb.velocity.magnitude / maxVelocity);
         transform.localScale = new Vector3(scale, 1f, 1f);
+    }
+
+    private void Die ()
+    {
+        //Al morir destruimos el objeto y restamos uno al contador
+        GameManager.enemyCount--;
+        Destroy(gameObject);
     }
 }
