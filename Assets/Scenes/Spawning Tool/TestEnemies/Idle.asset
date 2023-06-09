@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f0ba41aba9f42f43a00211ed5e675b1, type: 3}
-  m_Name: PlayerStats
+  m_Script: {fileID: 11500000, guid: d192aa30f3c1687439b8ef129979281c, type: 3}
+  m_Name: Idle
   m_EditorClassIdentifier: 
-  showPoints: 500
-  wave: 1
-  level: 0
+  baseMovementSpeed: 100
+  myEnemyType: 0
