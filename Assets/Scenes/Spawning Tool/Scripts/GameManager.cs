@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //Generate the first wave of the level
-        debuggingText.text = $"Wave: {playerStats.wave + 1}";
+        UpdateUI();
         GenerateEnemies();
     }
 
@@ -76,13 +76,18 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void NextWave()
+    public void NextWave()
     {
         if (enemyCount <= 0)
         {
             playerStats.wave++;
-            debuggingText.text = $"Wave: {playerStats.wave}";
+            UpdateUI();
             GenerateEnemies();
         }
+    }
+
+    public void UpdateUI()
+    {
+        debuggingText.text = $"Wave: {playerStats.wave + 1} Enemies: {enemyCount} ";
     }
 }

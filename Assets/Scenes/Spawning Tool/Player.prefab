@@ -4881,12 +4881,13 @@ GameObject:
   - component: {fileID: 7937575779468568011}
   - component: {fileID: 7937575779468568008}
   - component: {fileID: 7937575779468568009}
+  - component: {fileID: 3480894066299567069}
   - component: {fileID: 7937575779468568010}
   - component: {fileID: 7937575779468568013}
   - component: {fileID: 7937575779468568012}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4976,7 +4977,18 @@ MonoBehaviour:
   maxVelocity: 10
   slowdownFactor: 0.5
   willPower: 100
-  parryRange: 0.84
+--- !u!114 &3480894066299567069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7937575779468568006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f0293febf44e34492306b0be931426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   parryForce: 2
   Parryeffect: {fileID: 7937575779167710142}
 --- !u!50 &7937575779468568010
@@ -5033,6 +5045,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.016196847}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3110367

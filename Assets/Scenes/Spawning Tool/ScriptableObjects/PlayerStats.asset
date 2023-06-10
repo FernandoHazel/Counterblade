@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0ba41aba9f42f43a00211ed5e675b1, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  showPoints: 500
-  wave: 1
+  wave: 0
   level: 0

@@ -151,6 +151,10 @@ MonoBehaviour:
   myStats: {fileID: 11400000, guid: 0632b7a2adb72e343b5a88fe551b7795, type: 2}
   StartingAbilityOnAwake: {fileID: 0}
   currentAbilityPlaying: {fileID: 0}
+  moveSpeed: 20
+  maxVelocity: 10
+  slowdownFactor: 0.5
+  distanceFromPlayer: 0
 --- !u!195 &1592359423648082147
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -6,9 +6,6 @@ using UnityEngine;
 public class PlayerStats : ScriptableObject
 
 {
-    public int showPoints;
     public int wave;
     public int level;
-
-    //Ultimate abilities
 }
