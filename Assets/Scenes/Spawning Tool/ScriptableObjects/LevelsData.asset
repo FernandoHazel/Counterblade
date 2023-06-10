@@ -42,7 +42,7 @@ MonoBehaviour:
         tier: 0
         spawnInterval: 0.5
       - EnemyType: 3
-        quantity: 3
+        quantity: 2
         spawnTime: 0
         generator: 1
         tier: 0
